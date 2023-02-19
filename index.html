@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personas</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.js"></script>
+</head>
+<body>
+    <script src="datos.js"></script>
+
+    <div class="container">
+        <b>Nombre:</b><span id="nombre"></span><br>
+        <b>Pais:</b><span id="pais"></span><br>
+        <b>Mes:</b><span id="mes"></span><br>
+    </div>
+    <input id="boton_siguiente" type="button" value="Siguiente" onclick="siguiente()">
+
+    <script>
+        let indice = 0;
+
+        function mostrar(indice){
+            console.log("nombre:"+ personas[indice].nombre + "pais: " );
+
+            document.getElementById("nombre").innerHTML = personas[indice].nombre;
+            document.getElementById("pais").innerHTML = personas[indice].pais;
+            document.getElementById("mes").innerHTML = personas[indice].mes;
+        }
+
+        function siguiente(){
+            indice = indice + 1;
+            mostrar(indice);
+
+        }
+
+        mostrar(0);
+        
+    </script>
+</body>
+</html>
